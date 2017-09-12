@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170912 22:34:11.617" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\sutea\go\github.com\mossila\web-api\test\robot\inbox\main.robot" id="s1" name="Main">
+<test id="s1-t1" name="Get Ping">
+<kw name="Call Ping">
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>tmp</arg>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20170912 22:34:11.780" level="INFO">Creating Session using : alias=tmp, url=http://localhost:8080/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170912 22:34:11.780" starttime="20170912 22:34:11.779"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>tmp</arg>
+<arg>/Ping</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20170912 22:34:11.786" level="INFO">Get Request using : alias=tmp, uri=/Ping, headers=None json=None</msg>
+<msg timestamp="20170912 22:34:11.786" level="INFO">${resp} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20170912 22:34:11.786" starttime="20170912 22:34:11.780"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${resp}</arg>
+</arguments>
+<msg timestamp="20170912 22:34:11.786" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20170912 22:34:11.787" starttime="20170912 22:34:11.786"></status>
+</kw>
+<msg timestamp="20170912 22:34:11.787" level="INFO">${resp} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20170912 22:34:11.787" starttime="20170912 22:34:11.779"></status>
+</kw>
+<status status="PASS" endtime="20170912 22:34:11.788" critical="yes" starttime="20170912 22:34:11.778"></status>
+</test>
+<status status="PASS" endtime="20170912 22:34:11.790" starttime="20170912 22:34:11.620"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Main" pass="1">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
